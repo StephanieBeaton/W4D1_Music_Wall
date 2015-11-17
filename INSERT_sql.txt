@@ -1,0 +1,5 @@
+Track.create song_title: "Mamma Mia", author: "Bjorn and Benny", url: "www.google.com"
+
+Track.create song_title: "Don't be Cruel", author: "Otis Blackwell", url: "www.google.com"
+
+Track.create song_title: "How can you mend a broken heart", author: "Bee Gees", url: "www.google.com"
