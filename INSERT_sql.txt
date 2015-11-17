@@ -1,5 +1,49 @@
+
+
+ActiveRecord::Schema.define(version: 20151117014736) do
+
+  create_table "tracks", force: :cascade do |t|
+    t.string   "song_title"
+    t.string   "author"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "email",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "track_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+end
+
+
 Track.create song_title: "Mamma Mia", author: "Bjorn and Benny", url: "www.google.com"
 
 Track.create song_title: "Don't be Cruel", author: "Otis Blackwell", url: "www.google.com"
 
 Track.create song_title: "How can you mend a broken heart", author: "Bee Gees", url: "www.google.com"
+
+User.create user_name: "tim", email: "tim@test.com", password: "test1"
+
+User.create user_name: "sam", email: "sam@test.com", password: "test2"
+
+Vote.create track_id: 1, user_id: 1
+
+Vote.create track_id: 2, user_id: 1
+
+Vote.create track_id: 3, user_id: 2
+
+
+
+  <!-- <% session[:user_id] = 1 %> -->
+
