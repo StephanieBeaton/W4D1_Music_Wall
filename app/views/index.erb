@@ -1,1 +1,28 @@
 <h1>Home Page</h1>
+
+
+
+    <p>You are not logged in</p>
+
+    <p>If you do not have an account ...</p>
+    <a href="/users/new">Click on this link to create an account here</a>
+
+    <br>
+    <br>
+    <p>If you have an account login here ...</p>
+    <br>
+    <form method="post" action="/login">
+      <p>
+        <label for="username">Username:</label>
+        <input id="username" name="email" autofocus="autofocus" value="<%= session['username_given'] %>" />
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" />
+      </p>
+      <p>
+        <button>Sign in</button>
+      </p>
+    </form>
+
+

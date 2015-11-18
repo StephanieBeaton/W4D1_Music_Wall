@@ -32,29 +32,18 @@
 </head>
 <body>
 
+<% if @message %>
+  <p><%= @message %></p>
+<% end %>
 
-  <% if @message %>
-    <p><%= @message %></p>
-  <% end %>
+<% if session[:user_id] %>
 
-  <% if session[:user_id] %>
-    <div>Logged in user: <%= session[:user_id] %></div>
+  <div>Logged in user: <%= session[:user_id] %></div>
 
-    <form method="POST" action="/logout">
-      <input type="submit" value="Logout" />
-    </form>
+  <p><a class="button" href="/logout">Sign out</a></p>
+<% end %>
 
-
-    <%= yield %>
-  <% else %>
-    <form method="POST" action="/login">
-      <input type="text" name="email" />
-      <input type="text" name="password" />
-      <input type="submit" value="Login"/>
-    </form>
-  <% end %>
-
-
+  <%= yield %>
 
 </body>
 </html>

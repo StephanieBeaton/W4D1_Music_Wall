@@ -1,20 +1,21 @@
 
 <% if @message %>
-  @message is not null
   <p><%= @message %></p>
 <% end %>
 
 <% @tracks.each do |track| %>
   <div class="track">
-    <span> <%= track.votes.count %> </span>
-    <h3><%= track.song_title %> <small>(by: <%=track.author %>)</small> </h3>
+    <br><br>
+    <p> ------------------------------------- </p>
+    <p> Vote count <%= track.votes.count %> </p>
+    <h3><%= track.song_title %> <small>(by: <%=track.author %>) track.id <%=track.id %></small> </h3>
     <p>
-      <%= track.url %>
+      <a href="http://<%= track.url %>"> <%= track.url %></a>
     </p>
 
     <form method="POST" action="/votes">
       <input type="hidden" name="track_id" value="<%= track.id %>" />
-      <input type="hidden" name="user_id" value="1" />
+      <input type="hidden" name="user_id" value="<%= session[:user_id]%>" />
       <input type="submit" value="Vote Up" />
     </form>
 

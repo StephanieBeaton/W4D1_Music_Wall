@@ -13,6 +13,8 @@ gem 'tux'
 
 gem 'session'
 
+gem 'bcrypt'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
